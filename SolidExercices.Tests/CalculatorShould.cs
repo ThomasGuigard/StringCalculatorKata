@@ -10,47 +10,32 @@ namespace SolidExercices.Tests
         {
             var calculator = new Calculator();
             var result = calculator.Calculate("1+2,3");
-            Check.That(result).IsEqualTo(3.3);
-        }
-
-        [Test]
-        public void CalculateANegSum()
-        {
-            var calculator = new Calculator();
-            var result = calculator.Calculate("1-2,3");
-            Check.That(result).IsEqualTo(3.3);
+            Check.That(result).IsEqualTo(3.3m);
         }
 
         [Test]
         public void CalculateAProduct()
         {
             var calculator = new Calculator();
-            var result = calculator.Calculate("1+2,3");
-            Check.That(result).IsEqualTo(3.3);
+            var result = calculator.Calculate("2*2,3*4");
+            Check.That(result).IsEqualTo(18.4);
         }
 
         [Test]
-        public void CalculateAPosSubstraction()
+        public void CalculateASubstraction()
         {
             var calculator = new Calculator();
-            var result = calculator.Calculate("1+2,3");
-            Check.That(result).IsEqualTo(3.3);
+            var result = calculator.Calculate("48-13,5-21-12");
+            Check.That(result).IsEqualTo(1.5);
         }
 
         [Test]
-        public void CalculateANegSubstraction()
+        public void CalculateADivision()
         {
             var calculator = new Calculator();
-            var result = calculator.Calculate("1-9,3");
-            Check.That(result).IsEqualTo(3.3);
+            var result = calculator.Calculate("48/2/4");
+            Check.That(result).IsEqualTo(6);
         }
 
-        [Test]
-        public void CalculateADivWithZero()
-        {
-            var calculator = new Calculator();
-            var result = calculator.Calculate("1+2,0");
-            Check.That(result).IsEqualTo(3.3);
-        }
     }
 }
