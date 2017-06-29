@@ -10,19 +10,37 @@ namespace SolidExercices
         public decimal Calculate(string operation)
         {
             decimal result = 0;
-            char[] operators = {'+', '-', '*', '/'};
-        
+            char[] operators = {'+', '-', 'x', '/'};
+            int ct = 1;
+            var error = "Opération impossible";
             String[] sousOperations;
+
+
+            if (String.IsNullOrEmpty(operation) || !operators.Any(operation.Contains))
+            {
+                throw new ArgumentException(error);
+            }
 
             foreach (var myOperator in operators)
             {
+              
                 if (!operation.Contains(myOperator))
                 {
                     continue;  
                 }
 
                 sousOperations = operation.Split(myOperator);
-                result = Convert.ToDecimal(sousOperations[0]);
+
+                try
+                {
+                    result = Convert.ToDecimal(sousOperations[0]);
+                }
+                catch (Exception e)
+                {
+                    error = "Valeur incorrect : " + sousOperations[0];
+                    throw new ArgumentException(error);
+                }
+                
 
                 for (int i = 1; i < sousOperations.Length; i++)
                 {
@@ -38,7 +56,7 @@ namespace SolidExercices
                             result = result - chiffre;
                             break;
 
-                        case '*':
+                        case 'x':
                             result = result * chiffre;
                             break;
 
@@ -49,7 +67,7 @@ namespace SolidExercices
                             }
                             catch (DivideByZeroException)
                             {
-                                var error = "La division par 0 est impossible ! Rentrez une autre valeur..";
+                                error = "La division par 0 est impossible ! Rentrez une autre valeur..";
                                 throw new ArgumentException(error);
                             }
                             break;

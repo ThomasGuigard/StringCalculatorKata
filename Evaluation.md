@@ -23,7 +23,9 @@ Q2) POO permet de refactoriser le code afin de dégrouper et cacher certaines par
 
 Q3) Le but est d'abstraire le code afin de le rendre moins complexe et plus compréhensible
 
-Q4)
+Q4) - Les opérations devraient êtres rentrées directement dans la console
+	- Gestion des erreurs à faire
+	- L'application se ferme automatiquement à la fin
 
 Q5)
 

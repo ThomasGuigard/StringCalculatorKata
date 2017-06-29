@@ -14,7 +14,7 @@ namespace SolidExercices
             {
                 try
                 {
-                    var result = calculator.Calculate(operation);
+                    var result = calculator.Calculate(operation.Replace("  ", ""));
                     Console.WriteLine(operation + " = " + result);
                 }
                 catch (ArgumentException e)
@@ -22,6 +22,7 @@ namespace SolidExercices
                     Console.WriteLine("ERROR: " + e.Message);
                 }
             }
+            Console.ReadKey();
         }
     }
 }

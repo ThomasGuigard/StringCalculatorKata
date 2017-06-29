@@ -18,7 +18,7 @@ namespace SolidExercices.Tests
         public void CalculateAProduct()
         {
             var calculator = new Calculator();
-            var result = calculator.Calculate("6*2,2*8");
+            var result = calculator.Calculate("6x2,2x8");
             Check.That(result).IsEqualTo(105.6m);
         }
 
@@ -45,5 +45,18 @@ namespace SolidExercices.Tests
             Check.ThatCode(() => calculator.Calculate("48/0")).Throws<ArgumentException>();
         }
 
+        [Test]
+        public void NotACalcul()
+        {
+            var calculator = new Calculator();
+            Check.ThatCode(() => calculator.Calculate("Pas un calcul")).Throws<ArgumentException>();
+        }
+
+        [Test]
+        public void EmptyCalcul()
+        {
+            var calculator = new Calculator();
+            Check.ThatCode(() => calculator.Calculate("")).Throws<ArgumentException>();
+        }
     }
 }
