@@ -49,7 +49,7 @@ namespace SolidExercices.Tests
         public void NotACalcul()
         {
             var calculator = new Calculator();
-            Check.ThatCode(() => calculator.Calculate("Pas un calcul")).Throws<ArgumentException>();
+            Check.ThatCode(() => calculator.Calculate("La Marijuanga")).Throws<ArgumentException>();
         }
 
         [Test]
@@ -57,6 +57,27 @@ namespace SolidExercices.Tests
         {
             var calculator = new Calculator();
             Check.ThatCode(() => calculator.Calculate("")).Throws<ArgumentException>();
+        }
+
+        [Test]
+        public void NoOperatorsCalcul()
+        {
+            var calculator = new Calculator();
+            Check.ThatCode(() => calculator.Calculate("420")).Throws<ArgumentException>();
+        }
+
+        [Test]
+        public void UnknowVarCalcul()
+        {
+            var calculator = new Calculator();
+            Check.ThatCode(() => calculator.Calculate("420+y2")).Throws<ArgumentException>();
+        }
+
+        [Test]
+        public void TwoOperatorsCalcul()
+        {
+            var calculator = new Calculator();
+            Check.ThatCode(() => calculator.Calculate("420+x2")).Throws<ArgumentException>();
         }
     }
 }

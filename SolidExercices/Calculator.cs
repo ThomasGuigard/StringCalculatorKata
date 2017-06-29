@@ -44,7 +44,17 @@ namespace SolidExercices
 
                 for (int i = 1; i < sousOperations.Length; i++)
                 {
-                    decimal chiffre = Convert.ToDecimal(sousOperations[i]);
+                    decimal chiffre;
+
+                    try
+                    {
+                        chiffre = Convert.ToDecimal(sousOperations[i]);
+                    }
+                    catch (Exception e)
+                    {
+                        error = "Valeur incorrect : " + sousOperations[i];
+                        throw new ArgumentException(error);
+                    }
 
                     switch (myOperator)
                     {
