@@ -1,4 +1,5 @@
-﻿using NFluent;
+﻿using System;
+using NFluent;
 using NUnit.Framework;
 
 namespace SolidExercices.Tests
@@ -17,24 +18,31 @@ namespace SolidExercices.Tests
         public void CalculateAProduct()
         {
             var calculator = new Calculator();
-            var result = calculator.Calculate("2*2,3*4");
-            Check.That(result).IsEqualTo(18.4m);
+            var result = calculator.Calculate("6*2,2*8");
+            Check.That(result).IsEqualTo(105.6m);
         }
 
         [Test]
         public void CalculateASubstraction()
         {
             var calculator = new Calculator();
-            var result = calculator.Calculate("48-13,5-21-12");
-            Check.That(result).IsEqualTo(1.5m);
+            var result = calculator.Calculate("45-57,5-42-38");
+            Check.That(result).IsEqualTo(-92.5m);
         }
 
         [Test]
         public void CalculateADivision()
         {
             var calculator = new Calculator();
-            var result = calculator.Calculate("48/2/4");
-            Check.That(result).IsEqualTo(6m);
+            var result = calculator.Calculate("68/2/4");
+            Check.That(result).IsEqualTo(8.5m);
+        }
+
+        [Test]
+        public void CalculateADivisionByZero()
+        {
+            var calculator = new Calculator();
+            Check.ThatCode(() => calculator.Calculate("48/0")).Throws<ArgumentException>();
         }
 
     }

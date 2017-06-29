@@ -17,11 +17,11 @@ A LA FIN DU TP: pensez à pousser vos commits sur votre compte GitHub et envoyer 
 Réponses aux questions posées
 -----------------------------
 
-Q1)
+Q1) On peut utiliser des classes pour chaque opérateur
 
-Q2)
+Q2) POO permet de refactoriser le code afin de dégrouper et cacher certaines parties de code à l'utilisateur, pour y accéder on passe par les objets et des accesseurs. On ne dispose pas d'accès direct.
 
-Q3)
+Q3) Le but est d'abstraire le code afin de le rendre moins complexe et plus compréhensible
 
 Q4)
 

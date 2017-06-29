@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Linq;
 using System.Net.NetworkInformation;
 
@@ -49,7 +50,7 @@ namespace SolidExercices
                             catch (DivideByZeroException)
                             {
                                 var error = "La division par 0 est impossible ! Rentrez une autre valeur..";
-                                Console.WriteLine(error);
+                                throw new ArgumentException(error);
                             }
                             break;
                     }
