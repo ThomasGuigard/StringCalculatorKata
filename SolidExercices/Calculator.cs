@@ -10,6 +10,8 @@ namespace SolidExercices
         {
             decimal result = 0;
             char[] operators = {'+', '-', '*', '/'};
+        
+            String[] sousOperations;
 
             foreach (var myOperator in operators)
             {
@@ -18,12 +20,12 @@ namespace SolidExercices
                     continue;  
                 }
 
-                var sousOperations = operation.Split(myOperator);
+                sousOperations = operation.Split(myOperator);
                 result = Convert.ToDecimal(sousOperations[0]);
 
-                foreach (string t in sousOperations)
+                for (int i = 1; i < sousOperations.Length; i++)
                 {
-                    var chiffre = Convert.ToDecimal(t);
+                    decimal chiffre = Convert.ToDecimal(sousOperations[i]);
 
                     switch (myOperator)
                     {
@@ -36,7 +38,7 @@ namespace SolidExercices
                             break;
 
                         case '*':
-                            result = result / chiffre;
+                            result = result * chiffre;
                             break;
 
                         case '/':
@@ -46,7 +48,7 @@ namespace SolidExercices
                             }
                             catch (DivideByZeroException)
                             {
-                                String error = "La division par 0 est impossible ! Rentrez une autre valeur..";
+                                var error = "La division par 0 est impossible ! Rentrez une autre valeur..";
                                 Console.WriteLine(error);
                             }
                             break;

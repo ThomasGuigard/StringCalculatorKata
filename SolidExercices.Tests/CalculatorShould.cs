@@ -18,7 +18,7 @@ namespace SolidExercices.Tests
         {
             var calculator = new Calculator();
             var result = calculator.Calculate("2*2,3*4");
-            Check.That(result).IsEqualTo(18.4);
+            Check.That(result).IsEqualTo(18.4m);
         }
 
         [Test]
@@ -26,7 +26,7 @@ namespace SolidExercices.Tests
         {
             var calculator = new Calculator();
             var result = calculator.Calculate("48-13,5-21-12");
-            Check.That(result).IsEqualTo(1.5);
+            Check.That(result).IsEqualTo(1.5m);
         }
 
         [Test]
@@ -34,7 +34,7 @@ namespace SolidExercices.Tests
         {
             var calculator = new Calculator();
             var result = calculator.Calculate("48/2/4");
-            Check.That(result).IsEqualTo(6);
+            Check.That(result).IsEqualTo(6m);
         }
 
     }
