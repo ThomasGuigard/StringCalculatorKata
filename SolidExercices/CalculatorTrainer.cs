@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 
 namespace SolidExercices
 {
@@ -27,4 +28,6 @@ namespace SolidExercices
             _consoleDisplay.Read();
         }
     }
+
+    
 }
