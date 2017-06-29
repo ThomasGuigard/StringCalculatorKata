@@ -4,8 +4,8 @@
     {
         public decimal Calculate(string operation)
         {
-            Operation operators =  new Operation(operation);
-            return operators.FindAnswer(); ;
+            Operation myOperation =  new Operation(operation);
+            return myOperation.FindAnswer(); ;
         }
     }
 }

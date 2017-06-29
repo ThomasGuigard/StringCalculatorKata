@@ -27,7 +27,7 @@ Q4) - Les opérations devraient êtres rentrées directement dans la console
 	- Gestion des erreurs à faire
 	- L'application se ferme automatiquement à la fin
 
-Q5)
+Q5) La refactorisation, alléger les classes principales au niveau des dépendances, allegement de la couche métier
 
-Q6)
+Q6) On sépare avec des interfaces afin de diminuer le couplage entre les classes 
  

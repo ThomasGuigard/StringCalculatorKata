@@ -4,6 +4,8 @@ namespace SolidExercices
 {
     public class CalculatorTrainer
     {
+        private readonly ConsoleDisplay _consoleDisplay = new ConsoleDisplay();
+
         private readonly string[] _operations = new[]
             {"1+2,3", "2 x 3,6", "6-1-3,8", "6,6/3", "6/0", "not an operation", "a+1", "12", ""};
 
@@ -15,14 +17,14 @@ namespace SolidExercices
                 try
                 {
                     var result = calculator.Calculate(operation.Replace("  ", ""));
-                    Console.WriteLine(operation + " = " + result);
+                    _consoleDisplay.Display(operation + " = " + result);
                 }
-                catch (ArgumentException e)
+                catch (Exception e)
                 {
-                    Console.WriteLine("ERROR: " + e.Message);
+                    _consoleDisplay.Display("ERROR: " + e.Message);
                 }
             }
-            Console.ReadKey();
+            _consoleDisplay.Read();
         }
     }
 }
