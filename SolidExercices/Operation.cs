@@ -32,16 +32,7 @@ namespace SolidExercices
 
                 SousOperations = MyOperation.Split(myOperator);
 
-                try
-                {
-                    finalResult = Convert.ToDecimal(SousOperations[0]);
-                }
-                catch (Exception)
-                {
-                    GetError(3);
-                }
-
-                Calcul(myOperator);
+                finalResult += Calcul(myOperator);
 
             }
 
@@ -50,7 +41,19 @@ namespace SolidExercices
 
         public decimal Calcul(char myOperator)
         {
+
             decimal result = 0;
+
+
+            try
+            {
+                result = Convert.ToDecimal(SousOperations[0]);
+            }
+            catch (Exception)
+            {
+                GetError(3);
+            }
+
 
             for (int i = 1; i < SousOperations.Length; i++)
             {
@@ -114,6 +117,9 @@ namespace SolidExercices
                     break;
                 case 2:
                     error = "La division par 0 est impossible ! Rentrez une autre valeur..";
+                    break;
+                case 3:
+                    error = "Une valeur interdite se trouve au sein de l'opération ! ";
                     break;
                 default:
                     error = "Defaut inconnnu";
